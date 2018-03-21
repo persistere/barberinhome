@@ -15,11 +15,14 @@ class MainActivity : IntroActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
 
+        isButtonNextVisible = false
+        isButtonBackVisible = false
+
         addSlide(SimpleSlide.Builder()
                 .title("Slide 1")
                 .description("Slide 1")
                 .image(R.drawable.um)
-                .background(R.color.white)
+                .background(R.color.background_white)
                 //.backgroundDark(R.color.background_dark_1)
                 //.scrollable(false)
                 //.permission(Manifest.permission.CAMERA)
@@ -28,7 +31,7 @@ class MainActivity : IntroActivity() {
                 .title("Slide 2")
                 .description("Slide 3")
                 .image(R.drawable.dois)
-                .background(R.color.white)
+                .background(R.color.background_white)
                 //.backgroundDark(R.color.background_dark_1)
                 //.scrollable(false)
                 //.permission(Manifest.permission.CAMERA)
@@ -37,7 +40,7 @@ class MainActivity : IntroActivity() {
                 .title("Slide 3")
                 .description("Slide 3")
                 .image(R.drawable.tres)
-                .background(R.color.white)
+                .background(R.color.background_white)
                 //.backgroundDark(R.color.background_dark_1)
                 //.scrollable(false)
                 //.permission(Manifest.permission.CAMERA)
@@ -46,7 +49,7 @@ class MainActivity : IntroActivity() {
                 .title("Slide 4")
                 .description("Slide 4")
                 .image(R.drawable.quatro)
-                .background(R.color.white)
+                .background(R.color.background_white)
                 //.backgroundDark(R.color.background_dark_1)
                 //.scrollable(false)
                 //.permission(Manifest.permission.CAMERA)
