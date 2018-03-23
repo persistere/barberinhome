@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1005946316641",
+    "firebase_url": "https://barberinhome-3d8e9.firebaseio.com",
+    "project_id": "barberinhome-3d8e9",
+    "storage_bucket": "barberinhome-3d8e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005946316641:android:804b2453f631cce9",
+        "android_client_info": {
+          "package_name": "br.com.barberinhome.barberinhomebeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005946316641-kr9u2rdj88okt71lta5issa2lgpulera.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.barberinhome.barberinhomebeta",
+            "certificate_hash": "e81ac4f93fa46623a2dad8a00704d43c27b05f2d"
+          }
+        },
+        {
+          "client_id": "1005946316641-i0r50c6dmr6qrkmd8l5go09clpiht9t9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhveNYr5SzwhG50z2tSyI5y7MZMW4_jww"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005946316641-i0r50c6dmr6qrkmd8l5go09clpiht9t9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
