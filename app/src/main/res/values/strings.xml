@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BarberInHomeBeta</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="repense_a_hora_de_cortar_o_cabelo_e_fazer_a_barba">Repense a hora de cortar o cabelo e fazer a barba</string>
+    <string name="crie_sua_conta_gratis">Crie sua Conta Gratis</string>
+    <string name="j_tenho_conta">Já tenho conta</string>
 </resources>
