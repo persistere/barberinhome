@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.intro_cadastro.*
 
 
@@ -20,11 +21,15 @@ class MainActivity : IntroActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //setContentView(R.layout.activity_main)
 
-        //btCadastreSe.setOnClickListener{
+        //btCadastreSe.setOnClickListener {
         //    btCadastrar()
         //}
 
+//        btJatenhoConta.setOnClickListener {
+//            btCadastrar()
+//        }
 
 
         isButtonNextVisible = false
@@ -75,14 +80,11 @@ class MainActivity : IntroActivity() {
 
             addSlide(FragmentSlide.Builder()
                     .background(R.color.background_white)
-                    .fragment(R.layout.intro_cadastro)
+                    .fragment(CadastroFragment())
                     .canGoBackward(true)
                     .canGoForward(false)
                     .build())
         }
 
-    fun btCadastrar(){
-        val intent = Intent(this, CadastrarActivity::class.java)
-        startActivity(intent)
-    }
+
 }

@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context="br.com.barberinhome.barberinhomebeta.PrincipalActivity">
 
+
+
 </android.support.constraint.ConstraintLayout>
