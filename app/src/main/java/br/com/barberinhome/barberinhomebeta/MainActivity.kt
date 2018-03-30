@@ -1,35 +1,15 @@
 package br.com.barberinhome.barberinhomebeta
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.heinrichreimersoftware.materialintro.app.IntroActivity
-import android.Manifest.permission
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide
-import android.R.attr.description
-import android.content.Intent
-import android.view.View
-import android.widget.Button
-import android.widget.Toast
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.intro_cadastro.*
-
-
 
 
 class MainActivity : IntroActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
-
-        //btCadastreSe.setOnClickListener {
-        //    btCadastrar()
-        //}
-
-//        btJatenhoConta.setOnClickListener {
-//            btCadastrar()
-//        }
 
 
         isButtonNextVisible = false
@@ -41,9 +21,6 @@ class MainActivity : IntroActivity() {
                             "fazer um cadastro rapidinho e escolher o barbeiro que vai até você")
                     .image(R.drawable.um)
                     .background(R.color.background_white)
-                    //.backgroundDark(R.color.background_dark_1)
-                    //.scrollable(false)
-                    //.permission(Manifest.permission.CAMERA)
                     .build())
 
             addSlide(SimpleSlide.Builder()
@@ -51,9 +28,6 @@ class MainActivity : IntroActivity() {
                     .description("Não se preucupe, ele foi selecionado a dedo por nossa equipe")
                     .image(R.drawable.dois)
                     .background(R.color.background_white)
-                    //.backgroundDark(R.color.background_dark_1)
-                    //.scrollable(false)
-                    //.permission(Manifest.permission.CAMERA)
                     .build())
 
             addSlide(SimpleSlide.Builder()
@@ -61,9 +35,6 @@ class MainActivity : IntroActivity() {
                     .description("Ficou bonitão sem filas e sem sair de casa")
                     .image(R.drawable.tres)
                     .background(R.color.background_white)
-                    //.backgroundDark(R.color.background_dark_1)
-                    //.scrollable(false)
-                    //.permission(Manifest.permission.CAMERA)
                     .build())
 
             addSlide(SimpleSlide.Builder()
@@ -71,11 +42,6 @@ class MainActivity : IntroActivity() {
                     .description("Não esqueça de fazer sua avalização sobre o barbeiro")
                     .image(R.drawable.quatro)
                     .background(R.color.background_white)
-                    //.backgroundDark(R.color.background_dark_1)
-                    //.scrollable(false)
-                    //.permission(Manifest.permission.CAMERA)
-                    //.canGoBackward(true)
-                    //.canGoForward(false)
                     .build())
 
             addSlide(FragmentSlide.Builder()
@@ -85,6 +51,5 @@ class MainActivity : IntroActivity() {
                     .canGoForward(false)
                     .build())
         }
-
 
 }

@@ -21,14 +21,23 @@ class CadastroFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btCadastreSe.setOnClickListener {
-            btCadastrar()
+            irCadastrar()
+        }
+
+        btJatenhoConta.setOnClickListener {
+            irLogar()
         }
 
     }
 
 
-    fun btCadastrar() {
+    fun irCadastrar() {
         val intent = Intent(context, CadastrarActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun irLogar() {
+        val intent = Intent(context, LoginActivity::class.java)
         startActivity(intent)
     }
 }
