@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +19,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastrarActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".PrincipalActivity"></activity>
+        <activity
+            android:name=".CadastrarActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen" />
+
+        <activity
+            android:name=".PrincipalActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".BuscarEnderecoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen" />
+
     </application>
 
 </manifest>
