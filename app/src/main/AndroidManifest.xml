@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.barberinhome.barberinhomebeta">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,20 +27,18 @@
             android:name=".CadastrarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
         <activity
             android:name=".PrincipalActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".BuscarEnderecoActivity"
+        <activity
+            android:name=".BuscarEnderecoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
+        <activity android:name=".ListaBarbeirosActivity"></activity>
     </application>
 
 </manifest>
