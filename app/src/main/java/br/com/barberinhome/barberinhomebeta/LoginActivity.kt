@@ -1,11 +1,12 @@
 package br.com.barberinhome.barberinhomebeta
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.User
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofit
-import br.com.barberinhome.barberinhomebeta.util.MRetrofit
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,27 +30,36 @@ class LoginActivity : AppCompatActivity() {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
-            val api = retrofit.create(CallRetrofit::class.java)
-            api.getUser(etEmail.text.toString(), etSenha.text.toString())
-                    .enqueue(object : Callback<User> {
-
-                        override fun onResponse(call: Call<User>?, response: Response<User>?) {
-                            val nome = response?.body()?.nome_barber
-
-                            print(nome)
-
-                            Toast.makeText(applicationContext, nome, Toast.LENGTH_SHORT).show()
 
 
+            retrofit.create(CallRetrofit::class.java)
+                    .getUser(etEmail.text.toString(), etSenha.text.toString())
+                    .enqueue(object : Callback<List<User>> {
+
+                        override fun onResponse(call: Call<List<User>>?, response: Response<List<User>>?) {
+                            val login = response?.body()?.get(0)?.nome_barber
+                            println(login)
+                            listarBabeiros()
+                            if(login != null){
+//                                listarBabeiros()
+                            }else{
+//                                Toast.makeText(this@LoginActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
+                            }
                         }
 
-                        override fun onFailure(call: Call<User>?, t: Throwable?) {
-                            Toast.makeText(this@LoginActivity, t?.message, Toast.LENGTH_SHORT).show()
+                        override fun onFailure(call: Call<List<User>>?, t: Throwable?) {
+                            Toast.makeText(this@LoginActivity, "Erro 500", Toast.LENGTH_LONG).show()
                         }
 
                     })
 
 
         })
+    }
+
+
+    fun listarBabeiros() {
+        val intent = Intent(this, ListaBarbeirosActivity::class.java)
+        startActivity(intent)
     }
 }

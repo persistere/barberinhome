@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="27dp"
         android:layout_marginBottom="60dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -44,13 +44,13 @@
         android:textColorHighlight="@color/background_white"
         android:textColorHint="@color/background_white"
         android:textColorLink="@color/background_white"
-        app:layout_constraintBottom_toTopOf="@+id/btSalvarCadastro2"
+        app:layout_constraintBottom_toTopOf="@+id/btConfirmarEndereco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btSalvarCadastro2"
+        android:id="@+id/btConfirmarEndereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btAcharPosicaoAtual"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSalvarCadastro2" />
+        app:layout_constraintTop_toBottomOf="@+id/btConfirmarEndereco" />
 
     <TextView
         android:id="@+id/btAcharPosicaoAtual"
