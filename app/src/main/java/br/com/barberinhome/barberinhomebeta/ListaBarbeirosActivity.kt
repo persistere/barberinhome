@@ -16,7 +16,7 @@ class ListaBarbeirosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lista_barbeiros)
 
         recyclerBarbeiros.layoutManager = LinearLayoutManager(this)
-//        recyclerBarbeiros.adapter = BarbeirosAdapter()
+
 
         fetchJson()
 
@@ -24,12 +24,9 @@ class ListaBarbeirosActivity : AppCompatActivity() {
 
     fun fetchJson() {
         val url = "http://barberinhome.com.br/app/rest/wsBarbers"
-
-//        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
-
         val request = Request.Builder().url(url).build()
-
         val client = OkHttpClient()
+
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call?, response: Response?) {
                 val body = response?.body()?.string()
@@ -54,10 +51,4 @@ class ListaBarbeirosActivity : AppCompatActivity() {
 
 class Homefeed(val barbers: List<Barbers>)
 class Barbers(val id_barber: Int, val nome_barber: String, val img: String)
-
-
-
-//class Barbers(val barbeiros: List<Barbeiro>)
-//
-//class Barbeiro(val nome_barber: String)
 

@@ -22,37 +22,40 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         btSalvarCadastro.setOnClickListener({
-//            val retrofit = MRetrofit().getRetofit()
-//            val user = CallRetrofit().getUser(etEmail.text.toString(), etSenha.text.toString())
 
-            val retrofit = Retrofit.Builder()
-                    .baseUrl("http://barberinhome.com.br/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+            if(!etEmail.text.toString().isEmpty()){
 
+                if(!etSenha.text.toString().isEmpty()){
+                    val retrofit = Retrofit.Builder().baseUrl("http://barberinhome.com.br/")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build()
 
+                    retrofit.create(CallRetrofit::class.java)
+                            .getUser(etEmail.text.toString(), etSenha.text.toString())
+                            .enqueue(object : Callback<List<User>> {
 
-            retrofit.create(CallRetrofit::class.java)
-                    .getUser(etEmail.text.toString(), etSenha.text.toString())
-                    .enqueue(object : Callback<List<User>> {
+                            override fun onResponse(call: Call<List<User>>?, response: Response<List<User>>?) {
+                                val login = response?.body()?.get(0)?.nome_barber
 
-                        override fun onResponse(call: Call<List<User>>?, response: Response<List<User>>?) {
-                            val login = response?.body()?.get(0)?.nome_barber
-                            println(login)
-                            listarBabeiros()
-                            if(login != null){
-//                                listarBabeiros()
-                            }else{
-//                                Toast.makeText(this@LoginActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
+                                if(login != null){
+                                    listarBabeiros()
+                                }else{
+                                    Toast.makeText(this@LoginActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
+                                }
                             }
-                        }
 
-                        override fun onFailure(call: Call<List<User>>?, t: Throwable?) {
-                            Toast.makeText(this@LoginActivity, "Erro 500", Toast.LENGTH_LONG).show()
-                        }
-
+                            override fun onFailure(call: Call<List<User>>?, t: Throwable?) {
+                                Toast.makeText(this@LoginActivity, "Erro 500", Toast.LENGTH_LONG).show()
+                            }
                     })
 
+                }else{
+                    Toast.makeText(this@LoginActivity, "Preencha a Senha", Toast.LENGTH_LONG).show()
+                }
+
+            }else{
+                Toast.makeText(this@LoginActivity, "Preencha o E-mail", Toast.LENGTH_LONG).show()
+            }
 
         })
     }

@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "br.com.barberinhome.barberinhomebeta"
         minSdkVersion 15
@@ -56,6 +57,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
 
 
 }
