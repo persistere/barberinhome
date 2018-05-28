@@ -69,5 +69,16 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
 
     fun shareLink() {
         //Compartilhar link
+        var text = "barberinhome.com.br"
+        var share = Intent(android.content.Intent.ACTION_SEND)
+
+        share.type = "text/plan"
+        share.putExtra(Intent.EXTRA_TEXT, text)
+
+        val chosser = Intent.createChooser(share, "Compartilhar")
+
+        startActivity(chosser)
+
+
     }
 }
