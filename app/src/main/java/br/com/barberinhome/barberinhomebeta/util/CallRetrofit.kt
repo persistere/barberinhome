@@ -19,5 +19,4 @@ interface CallRetrofit {
                 @Query("senha") senha: String): Call<List<User>>
 
 
-
 }

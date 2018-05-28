@@ -44,7 +44,22 @@
             android:name=".BuscarEnderecoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-        <activity android:name=".ListaBarbeirosActivity" />
+        <activity
+            android:name=".ListaBarbeirosActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".DetalhesBarbeiroActivity"
+            android:screenOrientation="portrait" >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaBarbeirosActivity"
+                />
+        </activity>
+
+        <activity
+            android:name=".Mapa"
+            android:label="@string/title_activity_mapa" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -57,10 +72,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".Mapa"
-            android:label="@string/title_activity_mapa" />
-        <activity android:name=".DetalhesBarbeiroActivity"></activity>
+
     </application>
 
 </manifest>

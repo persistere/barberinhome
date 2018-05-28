@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    tools:context="br.com.androidpro.kfeedreader.MainActivity">
+    tools:context="br.com.barberinhome.barberinhomebeta.ListaBarbeirosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,8 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
-            android:text="Ver Mais"
+            android:background="@color/defaultApp"
+            android:text="Selecionar"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

@@ -11,28 +11,24 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="42dp"
+        android:layout_marginTop="69dp"
         android:text="@string/crie_sua_conta_gratis"
         android:textAlignment="center"
         android:textColor="@color/background_white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/etNome"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNome"
-        android:layout_width="match_parent"
+        android:id="@+id/etNomeCad"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/background_white"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:drawablePadding="5dp"
@@ -44,18 +40,16 @@
         android:textColorHighlight="@color/background_white"
         android:textColorHint="@color/background_white"
         android:textColorLink="@color/background_white"
-        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintBottom_toTopOf="@+id/etEmailCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/etCelular"
-        android:layout_width="match_parent"
+        android:id="@+id/etCelularCad"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/background_white"
         android:drawableLeft="@drawable/ic_phone_android_black_24dp"
         android:drawablePadding="5dp"
@@ -67,18 +61,16 @@
         android:textColorHighlight="@color/background_white"
         android:textColorHint="@color/background_white"
         android:textColorLink="@color/background_white"
-        app:layout_constraintBottom_toTopOf="@+id/etSenha"
+        app:layout_constraintBottom_toTopOf="@+id/btSalvarCadastroCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etSenhaCad" />
 
     <EditText
-        android:id="@+id/etSenha"
-        android:layout_width="match_parent"
+        android:id="@+id/etSenhaCad"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginBottom="11dp"
         android:backgroundTint="@color/background_white"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
@@ -90,18 +82,16 @@
         android:textColorHighlight="@color/background_white"
         android:textColorHint="@color/background_white"
         android:textColorLink="@color/background_white"
-        app:layout_constraintBottom_toTopOf="@+id/btSalvarCadastro"
+        app:layout_constraintBottom_toTopOf="@+id/etCelularCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCelular" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailCad" />
 
     <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
+        android:id="@+id/etEmailCad"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/background_white"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
@@ -113,17 +103,16 @@
         android:textColorHighlight="@color/background_white"
         android:textColorHint="@color/background_white"
         android:textColorLink="@color/background_white"
-        app:layout_constraintBottom_toTopOf="@+id/etCelular"
+        app:layout_constraintBottom_toTopOf="@+id/etSenhaCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNome" />
+        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" />
 
     <Button
-        android:id="@+id/btSalvarCadastro"
-        android:layout_width="match_parent"
+        android:id="@+id/btSalvarCadastroCad"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginBottom="153dp"
         android:backgroundTint="@color/background_white"
         android:text="Cadastrar"
         android:textColor="@color/defaultApp"
@@ -131,5 +120,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/etCelularCad" />
 </android.support.constraint.ConstraintLayout>
