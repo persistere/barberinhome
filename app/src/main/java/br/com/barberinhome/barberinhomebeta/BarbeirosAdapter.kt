@@ -34,7 +34,7 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
 
 
         val thumb = holder?.itemView?.ivFoto
-        Picasso.get().load(barbeiro.img).into(thumb)
+        Picasso.get().load(barbeiro?.img).into(thumb)
 
         holder?.barbeiro = barbeiro
     }
