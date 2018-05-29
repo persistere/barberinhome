@@ -8,10 +8,18 @@ import kotlinx.android.synthetic.main.activity_detalhes_barbeiro.view.*
 import kotlinx.android.synthetic.main.activity_login.*
 import android.databinding.adapters.TextViewBindingAdapter.setText
 import android.net.Uri
+import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detalhes_barbeiro.*
+import kotlinx.android.synthetic.main.activity_sobre.*
+import kotlinx.android.synthetic.main.item_list.view.*
+import okhttp3.*
+import java.io.IOException
 
 
 class DetalhesBarbeiroActivity : AppCompatActivity() {
@@ -20,22 +28,27 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_barbeiro)
 
-        val foto = intent.getStringExtra(CustomViewHolder.FOTO_BARBER)
-        val photo = findViewById<ImageView>(R.id.ivFotoDetalhes)
-        Picasso.get().load(foto).into(photo)
+        val extras = intent.extras
 
-        val nome = intent.getStringExtra(CustomViewHolder.NOME_BARBER)
-        val i = findViewById<TextView>(R.id.tfnomeBarberdt)
-        i.text = nome
+        val id = extras.getString("ID_BARBER")//intent.getStringExtra(CustomViewHolder.ID_BARBER)
+        println(id)
 
-
-
+        val nome = extras.getString("NOME_BARBER")//intent.getStringExtra(CustomViewHolder.NOME_BARBER)
         println(nome)
+
+        val foto = extras.getString("FOTO_BARBER")//intent.getStringExtra(CustomViewHolder.FOTO_BARBER)
         println(foto)
 
 
 
-        val datailURL = "http://barberinhome.com.br/app/rest/wsBarbers?id=1"
+        val i = findViewById<TextView>(R.id.tfnomeBarberdt)
+        i.text = nome
+
+
+        val thumb = findViewById<ImageView>(R.id.ivFotoDetalhes)
+        Picasso.get().load(foto).into(thumb)
+
+
 
         btnLigar.setOnClickListener {
             makeCall()
@@ -49,9 +62,8 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
             shareLink()
         }
 
-
-
     }
+
 
     fun callMapa() {
         val intent = Intent(this, Mapa::class.java)
@@ -79,6 +91,8 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
 
         startActivity(chosser)
 
-
     }
 }
+
+
+class BarberDetail(val id_barber: Int, val nome_barber: String, val img: String)

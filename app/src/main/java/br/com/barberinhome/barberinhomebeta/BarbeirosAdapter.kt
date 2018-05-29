@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.item_list.view.*
+import android.os.Bundle
+
+
 
 
 /**
@@ -28,7 +31,7 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-//        val nomeBarbeiros = nomeBarbeiros.get(position)
+
         val barbeiro = homeFeed.barbers.get(position)
         holder?.itemView?.tfnomeBarber?.text = barbeiro.nome_barber
 
@@ -42,21 +45,33 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
 }
 
 
-class CustomViewHolder(val view: View, var barbeiro: Barbers? = null): RecyclerView.ViewHolder(view) {
+class CustomViewHolder(val view: View, var barbeiro: Barbers? = null ): RecyclerView.ViewHolder(view) {
 
     companion object {
+        val ID_BARBER = ""
         val NOME_BARBER = ""
         val FOTO_BARBER = ""
     }
 
     init {
         view.setOnClickListener {
+
             val intent = Intent(view.context, DetalhesBarbeiroActivity::class.java)
 
-            intent.putExtra(FOTO_BARBER, barbeiro?.img)
-            intent.putExtra(NOME_BARBER, barbeiro?.nome_barber)
+            val extras = Bundle()
 
+            extras.putString("ID_BARBER", barbeiro?.id_barber.toString() )
+            extras.putString("NOME_BARBER", barbeiro?.nome_barber )
+            extras.putString("FOTO_BARBER", barbeiro?.img )
+            intent.putExtras(extras);
             view.context.startActivity(intent)
+
+
+//            intent.putExtra(ID_BARBER, barbeiro?.id_barber.toString() )
+//            intent.putExtra(NOME_BARBER, barbeiro?.nome_barber )
+//            intent.putExtra(FOTO_BARBER, barbeiro?.img )
+//
+//            view.context.startActivity(intent)
         }
     }
 }

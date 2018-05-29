@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
             if(!etEmail.text.toString().isEmpty()){
 
                 if(!etSenha.text.toString().isEmpty()){
+
                     val retrofit = Retrofit.Builder().baseUrl("http://barberinhome.com.br/")
                             .addConverterFactory(GsonConverterFactory.create())
                             .build()
