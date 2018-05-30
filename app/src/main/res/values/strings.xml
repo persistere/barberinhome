@@ -5,4 +5,14 @@
     <string name="crie_sua_conta_gratis">Crie sua Conta Gratis</string>
     <string name="j_tenho_conta">Já tenho conta</string>
     <string name="title_activity_mapa">Map</string>
+    <string name="title_activity_bottom_navigation">BottomNavigation</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_navigation_top">NavigationTopActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

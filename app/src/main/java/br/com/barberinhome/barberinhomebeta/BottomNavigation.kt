@@ -1,13 +1,14 @@
 package br.com.barberinhome.barberinhomebeta
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.v7.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_lista_barbeiros.*
+import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_bottom_navigation.*
+import android.content.Intent
 
-class SobreActivity : AppCompatActivity() {
+
+
+class BottomNavigation : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -16,13 +17,14 @@ class SobreActivity : AppCompatActivity() {
                 this.startActivity(intent)
             }
             R.id.navigation_dashboard -> {
-                val intent = Intent(this, SobreActivity::class.java)
-                this.startActivity(intent)
+                message.setText(R.string.title_dashboard)
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
                 val intent = Intent(this, SobreActivity::class.java)
                 this.startActivity(intent)
-
+                message.setText(R.string.title_notifications)
+                return@OnNavigationItemSelectedListener true
             }
         }
         false
@@ -30,8 +32,9 @@ class SobreActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sobre)
+        setContentView(R.layout.activity_bottom_navigation)
 
-        navigationlista.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
+
 }
