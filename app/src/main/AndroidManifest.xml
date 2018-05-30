@@ -20,37 +20,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".Splashctivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Intro">
+            android:theme="@style/FullScreen"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Intro" />
+
         <activity
             android:name=".CadastrarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
+
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
+
         <activity
             android:name=".PrincipalActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".BuscarEnderecoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
+
         <activity
             android:name=".ListaBarbeirosActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".DetalhesBarbeiroActivity"
             android:screenOrientation="portrait">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ListaBarbeirosActivity" />
@@ -60,21 +74,15 @@
             android:name=".SobreActivity"
             android:screenOrientation="portrait" />
 
-
         <service android:name=".MyFBClass">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-
-
 
         <activity
             android:name=".Mapa"
@@ -88,6 +96,14 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+        <activity
+            android:name=".BottomNavigation"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity
+            android:name=".NavigationTopActivity"
+            android:label="@string/title_activity_navigation_top"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
