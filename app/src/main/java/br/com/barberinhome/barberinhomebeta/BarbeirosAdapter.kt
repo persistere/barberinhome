@@ -33,13 +33,13 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
 
         val barbeiro = homeFeed.barbers.get(position)
-        holder?.itemView?.tfnomeBarber?.text = barbeiro.nome_barber
+        holder.itemView?.tfnomeBarber?.text = barbeiro.nome_barber
 
 
-        val thumb = holder?.itemView?.ivFoto
+        val thumb = holder.itemView?.ivFoto
         Picasso.get().load(barbeiro?.img).into(thumb)
 
-        holder?.barbeiro = barbeiro
+        holder.barbeiro = barbeiro
     }
 
 }

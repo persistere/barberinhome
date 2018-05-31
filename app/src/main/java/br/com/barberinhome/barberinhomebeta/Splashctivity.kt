@@ -28,6 +28,6 @@ class Splashctivity : AppCompatActivity() {
             this@Splashctivity.startActivity(intent)
 
             finish()
-        }, 3000)
+        }, 2000)
     }
 }

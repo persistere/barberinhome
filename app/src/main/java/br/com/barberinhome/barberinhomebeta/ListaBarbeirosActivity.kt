@@ -21,7 +21,7 @@ class ListaBarbeirosActivity : AppCompatActivity() {
                 this.startActivity(intent)
             }
             R.id.navigation_dashboard -> {
-                val intent = Intent(this, SobreActivity::class.java)
+                val intent = Intent(this, CadastroUserActivity::class.java)
                 this.startActivity(intent)
             }
             R.id.navigation_notifications -> {

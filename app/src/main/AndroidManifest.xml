@@ -20,56 +20,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".Splashctivity"
             android:screenOrientation="portrait"
-            android:theme="@style/FullScreen"
-            >
+            android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro" />
-
         <activity
             android:name=".CadastrarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
         <activity
             android:name=".PrincipalActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".BuscarEnderecoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen" />
-
         <activity
             android:name=".ListaBarbeirosActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".DetalhesBarbeiroActivity"
             android:screenOrientation="portrait">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ListaBarbeirosActivity" />
         </activity>
-
         <activity
             android:name=".SobreActivity"
             android:screenOrientation="portrait" />
@@ -103,7 +92,7 @@
             android:name=".NavigationTopActivity"
             android:label="@string/title_activity_navigation_top"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity android:name=".CadastroUserActivity"></activity>
     </application>
 
 </manifest>

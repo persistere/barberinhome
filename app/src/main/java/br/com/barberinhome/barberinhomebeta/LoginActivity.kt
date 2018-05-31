@@ -21,11 +21,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
         btSalvarCadastro.setOnClickListener({
 
             if(!etEmail.text.toString().isEmpty()){
 
                 if(!etSenha.text.toString().isEmpty()){
+
+                    btSalvarCadastro.isEnabled=false
+
 
                     val retrofit = Retrofit.Builder().baseUrl("http://barberinhome.com.br/")
                             .addConverterFactory(GsonConverterFactory.create())
@@ -41,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
                                 if(login != null){
                                     listarBabeiros()
                                 }else{
+                                    btSalvarCadastro.isEnabled=true
                                     Toast.makeText(this@LoginActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
                                 }
                             }
