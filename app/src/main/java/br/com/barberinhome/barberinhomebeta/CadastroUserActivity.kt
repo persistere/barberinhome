@@ -4,7 +4,17 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_lista_barbeiros.*
+import android.widget.Toast
+import br.com.barberinhome.barberinhomebeta.Model.EditUser
+import br.com.barberinhome.barberinhomebeta.Model.User
+import br.com.barberinhome.barberinhomebeta.util.CallRetrofitEditUser
+import kotlinx.android.synthetic.main.activity_cadastro_user.*
+import kotlinx.android.synthetic.main.activity_login.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class CadastroUserActivity : AppCompatActivity() {
 
@@ -32,5 +42,64 @@ class CadastroUserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro_user)
 
         navigationlista.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        val context = this
+
+        btSalvarCad.setOnClickListener ({
+            if(!etNomeCad.text.toString().isEmpty()){
+                if(!etCelularCad.text.toString().isEmpty()){
+
+                    val retrofit = Retrofit.Builder()
+                            .baseUrl("http://barberinhome.com.br/")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build()
+
+                    retrofit.create(CallRetrofitEditUser::class.java)
+                            .getEditUser(1,
+                                    etNomeCad.text.toString(),
+                                    etCelularCad.text.toString(),
+                                    0)
+                            .enqueue(object : Callback<EditUser> {
+
+
+                                override fun onResponse(call: Call<EditUser>?, response: Response<EditUser>?) {
+                                    val sucesso = response?.body()?.sucesso
+
+                                    if( sucesso == 1 ) {
+
+                                        var db = DataBaseHandler(context)
+                                        var data = db.readUserData()
+
+
+                                        println(data.get(0).nome)
+
+
+                                        Toast.makeText(this@CadastroUserActivity, "Alteração realizada com sucesso!", Toast.LENGTH_SHORT).show()
+                                    } else {
+                                        btSalvarCadastro.isEnabled=true
+                                        Toast.makeText(this@CadastroUserActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<EditUser>?, t: Throwable?) {
+                                    Toast.makeText(this@CadastroUserActivity, "Erro 500", Toast.LENGTH_LONG).show()
+                                }
+                            })
+
+                }else{
+                    Toast.makeText(this@CadastroUserActivity, "Preencha o nome", Toast.LENGTH_LONG).show()
+                }
+
+            }else{
+                Toast.makeText(this@CadastroUserActivity, "Preencha o nome", Toast.LENGTH_LONG).show()
+            }
+
+        })
+
+
     }
 }
+
+
+
+

@@ -3,12 +3,10 @@ package br.com.barberinhome.barberinhomebeta
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.AddUser
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofitUser
 import kotlinx.android.synthetic.main.activity_cadastrar.*
-import kotlinx.android.synthetic.main.activity_detalhes_barbeiro.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +18,8 @@ class CadastrarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastrar)
+
+        val context = this
 
         btSalvarCadastroCad.setOnClickListener ({
 
@@ -49,6 +49,13 @@ class CadastrarActivity : AppCompatActivity() {
                                         override fun onResponse(call: Call<AddUser>?, response: Response<AddUser>?) {
                                             val sucesso = response?.body()?.sucesso
 
+                                            var user = AddUserdbLocal(etNomeCad.text.toString(),
+                                                    etEmailCad.text.toString(),
+                                                    etSenhaCad.text.toString(),
+                                                    etCelularCad.text.toString())
+                                            var db = DataBaseHandler(context)
+                                            db.addUserData(user)
+
                                             println(sucesso)
 
                                             if(sucesso == 1 ){
@@ -59,7 +66,7 @@ class CadastrarActivity : AppCompatActivity() {
                                         }
 
                                         override fun onFailure(call: Call<AddUser>?, t: Throwable?) {
-                                            Toast.makeText(this@CadastrarActivity, "Erro 500", Toast.LENGTH_LONG).show()
+                                            Toast.makeText(this@CadastrarActivity, "Usuario ja Cadastrado", Toast.LENGTH_LONG).show()
                                             println(t)
                                         }
 
@@ -84,6 +91,7 @@ class CadastrarActivity : AppCompatActivity() {
 
         })
     }
+
 
 
     fun listarBabeiros() {

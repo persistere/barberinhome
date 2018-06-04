@@ -18,16 +18,16 @@
             android:adjustViewBounds="false"
             android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/tfnomeBarberdt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Titulo"
-            android:textAlignment="center"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tfnomeBarberdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Titulo"
+        android:textAlignment="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/cardview_dark_background"
+        android:textStyle="bold" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                     android:gravity="center"
                     android:text="Experiência"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/cardview_dark_background" />
 
                 <View android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -61,20 +61,12 @@
                     android:gravity="center"
                     android:text="5 estrelas"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/cardview_dark_background" />
 
             </TableRow>
 
         </TableLayout>
 
-        <Button
-            android:id="@+id/btnVerMais"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/defaultApp"
-            android:text="Ver Agenda"
-            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnLigar"

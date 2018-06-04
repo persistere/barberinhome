@@ -4,19 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.barberinhome.barberinhomebeta.CadastroUserActivity">
+    tools:context="br.com.barberinhome.barberinhomebeta.CadastroUserActivity"
+    tools:layout_editor_absoluteY="81dp">
 
+
+    <EditText
+        android:id="@+id/etNomeCad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="112dp"
+        android:drawableLeft="@drawable/ic_person_black2_24dp"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCelularCad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="23dp"
+        android:drawableLeft="@drawable/ic_phone_android_black2_24dp"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="Celular"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" />
+
+    <Button
+        android:id="@+id/btSalvarCad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="19dp"
+        android:background="@color/defaultApp"
+        android:text="Salvar"
+        android:textColor="@color/cardview_light_background"
+        android:textColorLink="@color/defaultApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCelularCad" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigationlista"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
 
 </android.support.constraint.ConstraintLayout>

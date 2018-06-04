@@ -31,14 +31,8 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
         val extras = intent.extras
 
         val id = extras.getString("ID_BARBER")//intent.getStringExtra(CustomViewHolder.ID_BARBER)
-        println(id)
-
         val nome = extras.getString("NOME_BARBER")//intent.getStringExtra(CustomViewHolder.NOME_BARBER)
-        println(nome)
-
         val foto = extras.getString("FOTO_BARBER")//intent.getStringExtra(CustomViewHolder.FOTO_BARBER)
-        println(foto)
-
 
 
         val i = findViewById<TextView>(R.id.tfnomeBarberdt)
@@ -47,7 +41,6 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
 
         val thumb = findViewById<ImageView>(R.id.ivFotoDetalhes)
         Picasso.get().load(foto).into(thumb)
-
 
 
         btnLigar.setOnClickListener {

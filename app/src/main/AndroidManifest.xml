@@ -92,7 +92,9 @@
             android:name=".NavigationTopActivity"
             android:label="@string/title_activity_navigation_top"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CadastroUserActivity"></activity>
+
+        <activity android:name=".CadastroUserActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
