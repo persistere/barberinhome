@@ -17,8 +17,7 @@ class MainActivity : IntroActivity() {
 
             addSlide(SimpleSlide.Builder()
                     .title("Éh! Chegou a hora de cortar a juba")
-                    .description("Vamos fazer isso de um jeito fácil! 2 passos " +
-                            "fazer um cadastro rapidinho e escolher o barbeiro que vai até você")
+                    .description("Vamos fazer isso de um jeito fácil! 2 passos" )
                     .image(R.drawable.um)
                     .background(R.color.background_white)
                     .build())
@@ -31,14 +30,14 @@ class MainActivity : IntroActivity() {
                     .build())
 
             addSlide(SimpleSlide.Builder()
-                    .title("Ai sim!!!")
-                    .description("Ficou bonitão sem filas e sem sair de casa")
+                    .title("Após efetuar o pagmento um barbeiro irá até você")
+                    .description("Vai ficar bonitão sem filas, sem transito e sem sair de casa")
                     .image(R.drawable.tres)
                     .background(R.color.background_white)
                     .build())
 
             addSlide(SimpleSlide.Builder()
-                    .title("Agora é só curtir o novo visual e fazer o pagamento")
+                    .title("Agora é só curtir o novo visual")
                     .description("Não esqueça de fazer sua avalização sobre o barbeiro")
                     .image(R.drawable.quatro)
                     .background(R.color.background_white)

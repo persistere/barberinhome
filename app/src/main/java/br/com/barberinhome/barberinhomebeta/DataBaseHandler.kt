@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.EditText
 
 
 /**
@@ -23,10 +24,10 @@ class DataBaseHandler (context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         override fun onCreate(db: SQLiteDatabase?) {
             val createTable = " CREATE TABLE " + TABLE_NAME + " (" +
                     COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COL_NOME + " VARCHAR(256), " +
+                    COL_NOME + " VARCHAR(80), " +
                     COL_EMAIL + " VARCHAR(256), " +
-                    COL_SENHA + " VARCHAR(256), " +
-                    COL_CELULAR + " VARCHAR(256) )"
+                    COL_SENHA + " VARCHAR(20), " +
+                    COL_CELULAR + " VARCHAR(15) )"
 
             db?.execSQL(createTable)
 
@@ -66,6 +67,9 @@ class DataBaseHandler (context: Context) : SQLiteOpenHelper(context, DATABASE_NA
                 do {
                     var user = AddUserdbLocal()
                     user.nome = result.getString(result.getColumnIndex(COL_NOME))
+                    user.email = result.getString(result.getColumnIndex(COL_EMAIL))
+                    user.senha = result.getString(result.getColumnIndex(COL_SENHA))
+                    user.celular = result.getString(result.getColumnIndex(COL_CELULAR))
                     list.add(user)
 
                 }while (result.moveToNext())
@@ -75,6 +79,38 @@ class DataBaseHandler (context: Context) : SQLiteOpenHelper(context, DATABASE_NA
             db.close()
 
             return list
+        }
+
+        fun updateUserData(nome: String, celular: String) {
+
+            println(nome)
+            println(celular)
+
+            val db = this.writableDatabase
+            val query = "Select * from " + TABLE_NAME
+            val result = db.rawQuery(query, null)
+
+            if(result.moveToFirst()){
+                do {
+                    var cv = ContentValues()
+                    cv.put(COL_NOME, nome)
+                    cv.put(COL_CELULAR, celular)
+                    db.update(TABLE_NAME, cv, COL_ID + "=?",
+                            arrayOf(result.getString(result.getColumnIndex(COL_ID))))
+
+                }while (result.moveToNext())
+            }
+
+            result.close()
+            db.close()
+
+        }
+
+        fun deleteUser() {
+            val db = this.readableDatabase
+            db.delete(TABLE_NAME, null, null)
+
+            db.close()
         }
 
 }

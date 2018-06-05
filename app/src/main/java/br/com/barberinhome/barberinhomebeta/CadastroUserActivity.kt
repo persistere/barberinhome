@@ -4,9 +4,9 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.widget.EditText
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.EditUser
-import br.com.barberinhome.barberinhomebeta.Model.User
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofitEditUser
 import kotlinx.android.synthetic.main.activity_cadastro_user.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -45,6 +45,17 @@ class CadastroUserActivity : AppCompatActivity() {
 
         val context = this
 
+        var db = DataBaseHandler(context)
+        var data = db.readUserData()
+
+
+        val nome = findViewById<EditText>(R.id.etNomeCad)
+        nome.setText(data.get(0).nome)
+
+        val celular = findViewById<EditText>(R.id.etCelularCad)
+        celular.setText(data.get(0).celular)
+
+
         btSalvarCad.setOnClickListener ({
             if(!etNomeCad.text.toString().isEmpty()){
                 if(!etCelularCad.text.toString().isEmpty()){
@@ -67,12 +78,8 @@ class CadastroUserActivity : AppCompatActivity() {
 
                                     if( sucesso == 1 ) {
 
-                                        var db = DataBaseHandler(context)
-                                        var data = db.readUserData()
 
-
-                                        println(data.get(0).nome)
-
+                                        db.updateUserData(etNomeCad.text.toString(), etCelularCad.text.toString())
 
                                         Toast.makeText(this@CadastroUserActivity, "Alteração realizada com sucesso!", Toast.LENGTH_SHORT).show()
                                     } else {
