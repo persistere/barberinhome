@@ -35,8 +35,6 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
         val foto = extras.getString("FOTO_BARBER")//intent.getStringExtra(CustomViewHolder.FOTO_BARBER)
 
 
-
-
         val i = findViewById<TextView>(R.id.tfnomeBarberdt)
         i.text = nome
 
@@ -49,7 +47,6 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
         }else{
             Picasso.get().load(foto).into(thumb)
         }
-
 
 
         btnLigar.setOnClickListener {

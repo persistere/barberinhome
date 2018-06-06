@@ -8,11 +8,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.maps.model.CircleOptions
-import com.google.android.gms.maps.model.Circle
-
+import com.google.android.gms.maps.model.*
 
 
 class Mapa : AppCompatActivity(), OnMapReadyCallback {
@@ -34,9 +30,14 @@ class Mapa : AppCompatActivity(), OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         val interlagos = LatLng(-23.687283, -46.692542)
-        mMap.addMarker(MarkerOptions().position(interlagos).title("Interlagos"))
+        mMap.addMarker(
+                MarkerOptions().position(interlagos).title("Interlagos").icon(BitmapDescriptorFactory.fromResource(R.drawable.mustache_png_2))
+
+        )
         mMap.moveCamera(CameraUpdateFactory.newLatLng(interlagos))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(interlagos, 13.0f))
+
+
 
         val circleOptions = CircleOptions()
                 .center(interlagos)
@@ -49,3 +50,5 @@ class Mapa : AppCompatActivity(), OnMapReadyCallback {
 
     }
 }
+
+
