@@ -42,7 +42,14 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
 
 
         val thumb = findViewById<ImageView>(R.id.ivFotoDetalhes)
-        Picasso.get().load(foto).into(thumb)
+
+        if(foto.isEmpty()){
+            val notImg = "http://barberinhome.com.br/app/fotos/none.png"
+            Picasso.get().load(notImg).into(thumb)
+        }else{
+            Picasso.get().load(foto).into(thumb)
+        }
+
 
 
         btnLigar.setOnClickListener {

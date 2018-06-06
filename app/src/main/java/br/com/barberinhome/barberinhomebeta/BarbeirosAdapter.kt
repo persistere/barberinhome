@@ -37,7 +37,14 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
 
 
         val thumb = holder.itemView?.ivFoto
-        Picasso.get().load(barbeiro?.img).into(thumb)
+
+        if(barbeiro?.img.isEmpty()){
+            val notImg = "http://barberinhome.com.br/app/fotos/none.png"
+            Picasso.get().load(notImg).into(thumb)
+        }else{
+            Picasso.get().load(barbeiro?.img).into(thumb)
+        }
+
 
         holder.barbeiro = barbeiro
     }

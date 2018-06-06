@@ -4,8 +4,11 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.User
+import br.com.barberinhome.barberinhomebeta.R.styleable.View
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofit
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
@@ -13,6 +16,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Compiler.enable
+
+
 
 
 class LoginActivity : AppCompatActivity()  {
@@ -21,6 +27,8 @@ class LoginActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
+
 
         btSalvarCadastro.setOnClickListener({
 
@@ -28,8 +36,8 @@ class LoginActivity : AppCompatActivity()  {
 
                 if(!etSenha.text.toString().isEmpty()){
 
-                    btSalvarCadastro.isEnabled=false
 
+                    progressBar.visibility =  ProgressBar.VISIBLE
 
                     val retrofit = Retrofit.Builder().baseUrl("http://barberinhome.com.br/")
                             .addConverterFactory(GsonConverterFactory.create())
@@ -44,9 +52,10 @@ class LoginActivity : AppCompatActivity()  {
 
                                 if(login != null){
                                     listarBabeiros()
+                                    progressBar.visibility = ProgressBar.GONE
                                 }else{
-                                    btSalvarCadastro.isEnabled=true
                                     Toast.makeText(this@LoginActivity, "Erro de login e senha", Toast.LENGTH_LONG).show()
+                                    progressBar.visibility = ProgressBar.GONE
                                 }
                             }
 

@@ -50,7 +50,7 @@
 
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="18dp"
         android:background="@color/defaultApp"
         android:text="Salvar"
         android:textColor="@color/cardview_light_background"
@@ -58,6 +58,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCelularCad" />
+
+    <TextView
+        android:id="@+id/btSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="Sair"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSalvarCad" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigationlista"

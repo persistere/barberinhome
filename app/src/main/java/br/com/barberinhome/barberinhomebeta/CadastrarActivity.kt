@@ -3,6 +3,8 @@ package br.com.barberinhome.barberinhomebeta
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.AddUser
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofitUser
@@ -19,6 +21,8 @@ class CadastrarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastrar)
 
+        val progressBar = findViewById<View>(R.id.progressBar2) as ProgressBar
+
         val context = this
 
         btSalvarCadastroCad.setOnClickListener ({
@@ -30,6 +34,8 @@ class CadastrarActivity : AppCompatActivity() {
                     if(!etSenhaCad.text.toString().isEmpty() ){
 
                         if(!etCelularCad.text.isEmpty() ){
+
+                            progressBar.visibility =  ProgressBar.VISIBLE
 
                             val retrofit = Retrofit.Builder()
                                     .baseUrl("http://barberinhome.com.br/")
@@ -55,18 +61,18 @@ class CadastrarActivity : AppCompatActivity() {
                                             var db = DataBaseHandler(context)
                                             db.addUserData(user)
 
-                                            println(sucesso)
-
                                             if(sucesso == 1 ){
                                                 listarBabeiros()
+                                                progressBar.visibility =  ProgressBar.GONE
                                             }else{
                                                 Toast.makeText(this@CadastrarActivity, "Erro de Cadastro", Toast.LENGTH_LONG).show()
+                                                progressBar.visibility =  ProgressBar.GONE
                                             }
                                         }
 
                                         override fun onFailure(call: Call<AddUser>?, t: Throwable?) {
                                             Toast.makeText(this@CadastrarActivity, "Usuário já Cadastrado", Toast.LENGTH_LONG).show()
-                                            println(t)
+                                            progressBar.visibility =  ProgressBar.GONE
                                         }
 
                                     })
