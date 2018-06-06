@@ -78,7 +78,6 @@ class CadastroUserActivity : AppCompatActivity() {
 
                                     if( sucesso == 1 ) {
 
-
                                         db.updateUserData(etNomeCad.text.toString(), etCelularCad.text.toString())
 
                                         Toast.makeText(this@CadastroUserActivity, "Alteração realizada com sucesso!", Toast.LENGTH_SHORT).show()
@@ -89,12 +88,12 @@ class CadastroUserActivity : AppCompatActivity() {
                                 }
 
                                 override fun onFailure(call: Call<EditUser>?, t: Throwable?) {
-                                    Toast.makeText(this@CadastroUserActivity, "Erro 500", Toast.LENGTH_LONG).show()
+                                    erro()
                                 }
                             })
 
                 }else{
-                    Toast.makeText(this@CadastroUserActivity, "Preencha o nome", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@CadastroUserActivity, "Preencha o Celular", Toast.LENGTH_LONG).show()
                 }
 
             }else{
@@ -102,8 +101,12 @@ class CadastroUserActivity : AppCompatActivity() {
             }
 
         })
+    }
 
-
+    fun erro() {
+        Toast.makeText(this@CadastroUserActivity, "Você está off line", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, CadastroFragment::class.java)
+        startActivity(intent)
     }
 }
 

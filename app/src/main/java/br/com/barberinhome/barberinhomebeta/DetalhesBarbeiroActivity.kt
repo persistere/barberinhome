@@ -35,6 +35,8 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
         val foto = extras.getString("FOTO_BARBER")//intent.getStringExtra(CustomViewHolder.FOTO_BARBER)
 
 
+
+
         val i = findViewById<TextView>(R.id.tfnomeBarberdt)
         i.text = nome
 
@@ -73,16 +75,12 @@ class DetalhesBarbeiroActivity : AppCompatActivity() {
     }
 
     fun shareLink() {
-        //Compartilhar link
-        var text = "barberinhome.com.br"
-        var share = Intent(android.content.Intent.ACTION_SEND)
+        val dadosContato = "barberinhome.com.br"
 
-        share.type = "text/plan"
-        share.putExtra(Intent.EXTRA_TEXT, text)
-
-        val chosser = Intent.createChooser(share, "Compartilhar")
-
-        startActivity(chosser)
+        val sendIntent = Intent(Intent.ACTION_SEND)
+        sendIntent.putExtra(Intent.EXTRA_TEXT, dadosContato)
+        sendIntent.type = "text/plain"
+        startActivity(Intent.createChooser(sendIntent, "Compartilhar"))
 
     }
 }

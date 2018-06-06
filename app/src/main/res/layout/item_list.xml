@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,10 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Titulo"
+            android:text="Nome"
             android:textAlignment="center"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/cardview_dark_background"
             android:textStyle="bold" />
 
         <TableLayout
@@ -47,22 +48,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Autor"
+                    android:text="5 anos de Experiência"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/cardview_dark_background" />
 
                 <View android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@android:color/darker_gray"/>
 
+                <ImageView
+                    android:id="@+id/star"
+                    android:layout_width="2dp"
+                    app:srcCompat="@drawable/ic_star_black_24dp" />
+
                 <TextView
                     android:id="@+id/data"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Data Pub"
+                    android:gravity="left|center"
+                    android:text="4.9"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/cardview_dark_background" />
 
             </TableRow>
 

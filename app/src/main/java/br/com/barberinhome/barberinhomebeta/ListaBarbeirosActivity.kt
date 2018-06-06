@@ -1,10 +1,13 @@
 package br.com.barberinhome.barberinhomebeta
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_bottom_navigation.*
 import kotlinx.android.synthetic.main.activity_lista_barbeiros.*
@@ -41,7 +44,6 @@ class ListaBarbeirosActivity : AppCompatActivity() {
 
         recyclerBarbeiros.layoutManager = LinearLayoutManager(this)
 
-
         fetchJson()
 
     }
@@ -66,7 +68,7 @@ class ListaBarbeirosActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
-                println("erro")
+                Toast.makeText(this@ListaBarbeirosActivity, "Você está off-line", Toast.LENGTH_LONG).show()
             }
         })
     }

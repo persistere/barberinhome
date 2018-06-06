@@ -15,7 +15,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                             override fun onFailure(call: Call<List<User>>?, t: Throwable?) {
-                                Toast.makeText(this@LoginActivity, "Erro 500", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this@LoginActivity, "Você está off-line", Toast.LENGTH_LONG).show()
                             }
                     })
 

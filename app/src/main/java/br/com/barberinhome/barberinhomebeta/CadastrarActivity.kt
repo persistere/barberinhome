@@ -23,7 +23,6 @@ class CadastrarActivity : AppCompatActivity() {
 
         btSalvarCadastroCad.setOnClickListener ({
 
-
             if(!etNomeCad.text.toString().isEmpty() ){
 
                 if(!etEmailCad.text.toString().isEmpty()){
@@ -66,7 +65,7 @@ class CadastrarActivity : AppCompatActivity() {
                                         }
 
                                         override fun onFailure(call: Call<AddUser>?, t: Throwable?) {
-                                            Toast.makeText(this@CadastrarActivity, "Usuario ja Cadastrado", Toast.LENGTH_LONG).show()
+                                            Toast.makeText(this@CadastrarActivity, "Usuário já Cadastrado", Toast.LENGTH_LONG).show()
                                             println(t)
                                         }
 
