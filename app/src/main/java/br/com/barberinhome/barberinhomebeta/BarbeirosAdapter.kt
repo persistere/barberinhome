@@ -23,7 +23,7 @@ class BarbeirosAdapter(val homeFeed: Homefeed): RecyclerView.Adapter<CustomViewH
         return homeFeed.barbers.count()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         //como criamos a view
         val layoutInflater = LayoutInflater.from(parent?.context)
         val cellfromRow = layoutInflater.inflate(R.layout.item_list, parent, false)

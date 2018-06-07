@@ -106,6 +106,7 @@ class CadastroUserActivity : AppCompatActivity() {
         btSair.setOnClickListener ({
             //db.deleteUser()
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         })
     }
 

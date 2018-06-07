@@ -16,16 +16,16 @@ import kotlinx.android.synthetic.main.intro_cadastro.*
  * Created by joseotavio on 24/03/2018.
  */
 class CadastroFragment: Fragment() {
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.intro_cadastro, container, false)
     }
 
     fun Context.toast(message: CharSequence) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connMgr = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connMgr.activeNetworkInfo
 
 
@@ -33,7 +33,7 @@ class CadastroFragment: Fragment() {
             if( networkInfo != null && networkInfo.isConnectedOrConnecting) {
                 irCadastrar()
             } else {
-                context.toast("Você Está Offline")
+                context!!.toast("Você Está Offline")
             }
 
         }
@@ -42,7 +42,7 @@ class CadastroFragment: Fragment() {
             if( networkInfo != null && networkInfo.isConnectedOrConnecting) {
                 irLogar()
             } else {
-                context.toast("Você Está Offline")
+                context!!.toast("Você Está Offline")
             }
 
         }
