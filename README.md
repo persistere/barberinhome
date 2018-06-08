@@ -1,5 +1,9 @@
 # Barber In Home
+> <a href="http://barberinhome.com.br">www.barberinhome.com.br</a>
+> Chegou a hora de cortar a juba mas só de pensar na fila, do trãnsito já desanima. Relaxa chama um barbeiro pra ir na sua casa.
+
 <img src="https://user-images.githubusercontent.com/32207134/41182748-66bfdeda-6b4d-11e8-812c-980691c8e4ad.jpg">
+
 
 ## Introdução
 <p>
@@ -10,7 +14,6 @@
   <img width="200"  src="https://user-images.githubusercontent.com/32207134/41182311-7e632c24-6b4b-11e8-80a4-21d0dc01d554.png">  
 </p>
 
-> Chegou a hora de cortar a juba mas só de pensar na fila, do trãnsito já desanima. Relaxa chama um barbeiro pra ir na sua casa.
 
 ## Cadastro
 <p>
