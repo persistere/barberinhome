@@ -41,6 +41,10 @@
   <img width="200"  src="https://user-images.githubusercontent.com/32207134/41182320-7f8640a0-6b4b-11e8-8a0b-30f74b26bacd.png">
 </p>
 
+## About
+<p>
+  <img width="200" src="https://user-images.githubusercontent.com/32207134/41182321-7fa0d06e-6b4b-11e8-9ece-bade6d23739a.png">
+</p>
 
 ## License
 Copyright 2018 - José Otávio
