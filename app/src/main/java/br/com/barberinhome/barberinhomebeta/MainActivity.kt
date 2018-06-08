@@ -12,12 +12,14 @@ class MainActivity : IntroActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        var db = DataBaseHandler(this)
-//        var data = db.readUserData()
-//        val email = data.get(0).email
-//        if(!email.isEmpty()) {
-//            startActivity(Intent(this, ListaBarbeirosActivity::class.java))
-//        }
+            var db = DataBaseHandler(this)
+            var data = db.readUserData()
+            if(!data.isEmpty()) {
+                val email = data.get(0).email
+                if (!email.isEmpty()) {
+                    startActivity(Intent(this, ListaBarbeirosActivity::class.java))
+                }
+            }
 
             isButtonNextVisible = false
             isButtonBackVisible = false

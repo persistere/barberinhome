@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import br.com.barberinhome.barberinhomebeta.Model.User
 import br.com.barberinhome.barberinhomebeta.R.styleable.View
 import br.com.barberinhome.barberinhomebeta.util.CallRetrofit
+import kotlinx.android.synthetic.main.activity_cadastrar.*
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -77,6 +79,20 @@ class LoginActivity : AppCompatActivity()  {
 
 
     fun listarBabeiros() {
+
+        var db = DataBaseHandler(this)
+        var data = db.readUserData()
+
+        if(data.isEmpty()) {
+
+            var user = AddUserdbLocal("",
+                                       etEmail.text.toString(),
+                                      "",
+                                      "")
+            var db = DataBaseHandler(this)
+            db.addUserData(user)
+        }
+
         val intent = Intent(this, ListaBarbeirosActivity::class.java)
         startActivity(intent)
     }
