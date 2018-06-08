@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Nome"
+        android:text="@string/nome"
         android:textAlignment="center"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@color/cardview_dark_background"
@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="5 anos de Experiência"
+                    android:text="@string/_5_anos_de_experi_ncia"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/cardview_dark_background" />
 
@@ -63,7 +63,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:gravity="left|center"
-                    android:text="4.9"
+                    android:text="@string/_4_9"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/cardview_dark_background" />
 
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/defaultApp"
-            android:text="Ligar"
+            android:text="@string/ligar"
             android:textColor="@android:color/white" />
 
         <Button
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/defaultApp"
-            android:text="Compartilhar"
+            android:text="@string/compartilhar"
             android:textColor="@android:color/white" />
 
         <Button
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/defaultApp"
-            android:text="Região atendimento"
+            android:text="@string/regi_o_atendimento"
             android:textColor="@android:color/white" />
 
 

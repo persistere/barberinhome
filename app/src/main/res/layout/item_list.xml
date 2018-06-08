@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Nome"
+            android:text="@string/nome"
             android:textAlignment="center"
             android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@color/cardview_dark_background"
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="5 anos de Experiência"
+                    android:text="@string/_5_anos_de_experi_ncia"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/cardview_dark_background" />
 

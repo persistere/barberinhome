@@ -19,12 +19,12 @@
         android:drawableLeft="@drawable/ic_person_black2_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textPersonName"
         android:textColorLink="@color/common_google_signin_btn_text_dark_focused"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" android:drawableStart="@drawable/ic_person_black2_24dp"/>
 
     <EditText
         android:id="@+id/etCelularCad"
@@ -37,11 +37,11 @@
         android:drawableLeft="@drawable/ic_phone_android_black2_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Celular"
+        android:hint="@string/celular"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" />
+        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" android:drawableStart="@drawable/ic_phone_android_black2_24dp"/>
 
     <Button
         android:id="@+id/btSalvarCad"
@@ -52,7 +52,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="18dp"
         android:background="@color/defaultApp"
-        android:text="Salvar"
+        android:text="@string/salvar"
         android:textColor="@color/cardview_light_background"
         android:textColorLink="@color/defaultApp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
-        android:text="Sair"
+        android:text="@string/sair"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

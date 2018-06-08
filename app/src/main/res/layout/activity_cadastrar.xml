@@ -35,7 +35,7 @@
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textPersonName"
         android:shadowColor="@color/background_white"
         android:textColor="@android:color/background_light"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etEmailCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" android:drawableStart="@drawable/ic_person_black_24dp" />
 
     <EditText
         android:id="@+id/etCelularCad"
@@ -58,7 +58,7 @@
         android:drawableLeft="@drawable/ic_phone_android_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Celular"
+        android:hint="@string/celular"
         android:inputType="number"
         android:shadowColor="@color/background_white"
         android:textColor="@color/background_white"
@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btSalvarCadastroCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSenhaCad" />
+        app:layout_constraintTop_toBottomOf="@+id/etSenhaCad" android:drawableStart="@drawable/ic_phone_android_black_24dp" />
 
     <EditText
         android:id="@+id/etSenhaCad"
@@ -81,7 +81,7 @@
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:inputType="textPassword"
         android:shadowColor="@color/background_white"
         android:textColor="@color/background_white"
@@ -91,7 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etCelularCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailCad" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailCad" android:drawableStart="@drawable/ic_lock_black_24dp"/>
 
     <EditText
         android:id="@+id/etEmailCad"
@@ -104,7 +104,7 @@
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
         android:shadowColor="@color/background_white"
         android:textColor="@color/background_white"
@@ -114,7 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etSenhaCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" />
+        app:layout_constraintTop_toBottomOf="@+id/etNomeCad" android:drawableStart="@drawable/ic_email_black_24dp"/>
 
     <Button
         android:id="@+id/btSalvarCadastroCad"
@@ -122,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="149dp"
         android:backgroundTint="@color/background_white"
-        android:text="Cadastrar"
+        android:text="@string/cadastrar"
         android:textColor="@color/defaultApp"
         android:textColorLink="@color/background_white"
         app:layout_constraintBottom_toBottomOf="parent"

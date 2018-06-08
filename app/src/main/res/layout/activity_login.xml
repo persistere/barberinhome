@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="145dp"
-        android:text="Insira seu e-mail e senha"
+        android:text="@string/insira_seu_e_mail_e_senha"
         android:textAlignment="center"
         android:textColor="@color/background_white"
         android:textSize="18sp"
@@ -35,7 +35,7 @@
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:inputType="textPassword"
         android:shadowColor="@color/background_white"
         android:textColor="@color/background_white"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btSalvarCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" android:drawableStart="@drawable/ic_lock_black_24dp"/>
 
     <EditText
         android:id="@+id/etEmail"
@@ -58,7 +58,7 @@
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:drawablePadding="5dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
         android:shadowColor="@color/background_white"
         android:textColor="@color/background_white"
@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" android:drawableStart="@drawable/ic_email_black_24dp"/>
 
     <Button
         android:id="@+id/btSalvarCadastro"
@@ -78,7 +78,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:backgroundTint="@color/background_white"
-        android:text="Entrar"
+        android:text="@string/entrar"
         android:textColor="@color/defaultApp"
         android:textColorLink="@color/background_white"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"

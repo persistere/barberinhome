@@ -15,36 +15,37 @@ class MainActivity : IntroActivity() {
 //        var db = DataBaseHandler(this)
 //        var data = db.readUserData()
 //        val email = data.get(0).email
-//        email.isEmpty()
-//        startActivity(Intent(this, ListaBarbeirosActivity::class.java))
+//        if(!email.isEmpty()) {
+//            startActivity(Intent(this, ListaBarbeirosActivity::class.java))
+//        }
 
             isButtonNextVisible = false
             isButtonBackVisible = false
 
             addSlide(SimpleSlide.Builder()
-                    .title("Éh! Chegou a hora de cortar a juba")
-                    .description("Vamos fazer isso de um jeito fácil! 2 passos" )
+                    .title(getString(R.string.t1))
+                    .description(R.string.d1 )
                     .image(R.drawable.um)
                     .background(R.color.background_white)
                     .build())
 
             addSlide(SimpleSlide.Builder()
-                    .title("Escolha o barbeiro, dia e a hora")
-                    .description("Não se preocupe, ele foi selecionado a dedo por nossa equipe")
+                    .title(R.string.t2)
+                    .description(R.string.d2)
                     .image(R.drawable.dois)
                     .background(R.color.background_white)
                     .build())
 
             addSlide(SimpleSlide.Builder()
-                    .title("Após efetuar o pagamento um barbeiro irá até você")
-                    .description("Vai ficar bonitão sem filas, sem transito e sem sair de casa")
+                    .title(R.string.t3)
+                    .description(R.string.d3)
                     .image(R.drawable.tres)
                     .background(R.color.background_white)
                     .build())
 
             addSlide(SimpleSlide.Builder()
-                    .title("Agora é só curtir o novo visual")
-                    .description("Não esqueça de fazer sua avaliação sobre o barbeiro")
+                    .title(R.string.t4)
+                    .description(R.string.t4)
                     .image(R.drawable.quatro)
                     .background(R.color.background_white)
                     .build())
