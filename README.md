@@ -1,5 +1,5 @@
 # Barber In Home
-> <p><a href="http://barberinhome.com.br">www.barberinhome.com.br</a></p>
+> <p><a href="http://barberinhome.com.br" target="_blank">www.barberinhome.com.br</a></p>
 > Chegou a hora de cortar a juba mas só de pensar na fila, do trãnsito já desanima. Relaxa chama um barbeiro pra ir na sua casa.
 
 
